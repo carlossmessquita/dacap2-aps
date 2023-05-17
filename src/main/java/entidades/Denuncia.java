@@ -16,6 +16,8 @@ public class Denuncia {
 	private String incidente;
 	@Column(name = "violacao_de_direito")
 	private String violacaoDireito;
+	@Column(name = "providencias_tomadas")
+	private String providencias;
 	
 	public Integer getId() {
 		return id;
