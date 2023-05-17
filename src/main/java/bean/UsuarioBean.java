@@ -3,6 +3,7 @@ package bean;
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
 
@@ -14,6 +15,7 @@ import static util.MessageUtil.*;
 import java.util.List;
 
 @ManagedBean
+@RequestScoped 
 public class UsuarioBean {
 	private Usuario usuario = new Usuario();
 	private List<Usuario> lista;

@@ -35,6 +35,13 @@ public class Denuncia {
 		this.violacaoDireito = violacaoDireito;
 	}
 	
+	public String getProvidencias() {
+		return this.providencias;
+	}
+	
+	public void setProvidencias(String providencia) {
+		this.providencias = providencia;
+	}
 	@Override
 	public String toString() {
 		return "Denuncia [incidente=" + incidente + ", violacaoDireito=" + violacaoDireito + "]";
