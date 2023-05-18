@@ -11,28 +11,93 @@
 </h:head>
 
 <h:body>
-    <h:form id= "formulario_denuncia">
-    	<p:messages id="messages" showDetail="true" closable="true"><p:autoUpdate/></p:messages>
+	<center>
+	    <h:form id="formulario_incidente">
+	    	<p:messages id="messages" showDetail="true" closable="true"><p:autoUpdate/></p:messages>
+	
+	        <p:panel header="Cadastro de Incidente">
+				<p:panelGrid columns="2"
+							 layout="grid"
+	                 		 styleClass="ui-panelgrid-blank ui-fluid"
+	                 		 style="border:0px none; background-color:transparent;">
+					
+					<p:panel header="Sobre a vítima:">
+						<p:panelGrid columns="2">
+							<p:outputLabel for="nome_vitima" value="Nome:"/>
+							<p:inputText id="nome_vitima" value="#{indicenteBean.vitima.nome}" />
+							
+							<p:outputLabel for="sexo_vitima" value="Sexo:"/>
+							<p:selectOneRadio id="sexo_vitima" value="#{incidenteBean.vitima.sexo}">
+					            <f:selectItem itemLabel="Masculino" itemValue="M"/>
+					            <f:selectItem itemLabel="Feminino" itemValue="F"/>
+					        </p:selectOneRadio>
+					        
+					        <p:outputLabel for="idade_vitima" value="Idade:"/>
+							<p:inputText id="idade_vitima" value="#{indicenteBean.vitima.idade}" />
+							
+							<p:outputLabel for="serie_vitima" value="Série:"/>
+							<p:inputText id="serie_vitima" value="#{indicenteBean.vitima.serie}" />
+							
+							<p:outputLabel for="turno_vitima" value="Turno:"/>
+							<p:inputText id="turno_vitima" value="#{indicenteBean.vitima.turno}" />
+							
+							<p:outputLabel for="endereco_vitima" value="Endereço:"/>
+							<p:inputTextarea id="endereco_vitima" value="#{indicenteBean.vitima.endereco}" />
+						</p:panelGrid>
+					</p:panel>
+					
+					<p:panel header="Sobre o agressor">
+						<p:panelGrid columns="1">
+							<p:outputLabel for="nome_agressor" value="Nome:"/>
+							<p:inputText id="nome_agressor" value="#{indicenteBean.agressor.nome}" />
+							
+							<p:outputLabel for="sexo_agressor" value="Sexo:"/>
+							<p:selectOneRadio id="sexo_agressor" value="#{incidenteBean.agressor.sexo}">
+					            <f:selectItem itemLabel="Masculino" itemValue="M"/>
+					            <f:selectItem itemLabel="Feminino" itemValue="F"/>
+					        </p:selectOneRadio>
+					        
+					        <p:outputLabel for="idade_agressor" value="Idade:"/>
+							<p:inputText id="idade_agressor" value="#{indicenteBean.agressor.idade}" />
+							
+							<p:outputLabel for="relacionamento_com_vitima" value="Relacionamento com a Vítima:"/>
+							<p:inputText id="relacionamento_com_vitima" value="#{indicenteBean.agressor.relacionamentoVitima}" />
+							
+							<p:outputLabel for="ocupacao_agressor" value="Ocupação:"/>
+							<p:inputText id="ocupacao_agressor" value="#{indicenteBean.agressor.ocupacao}" />
+							
+							<p:outputLabel for="raca_agressor" value="Raça/Cor:"/>
+							<p:selectOneRadio id="raca_agressor" value="#{incidenteBean.agressor.raca}">
+					            <f:selectItem itemLabel="Branca" itemValue="branca"/>
+					            <f:selectItem itemLabel="Preta" itemValue="preta"/>
+					            <f:selectItem itemLabel="Parda" itemValue="parda"/>
+					            <f:selectItem itemLabel="Indígena" itemValue="indigena"/>
+					            <f:selectItem itemLabel="Amarela" itemValue="amarela"/>
+					        </p:selectOneRadio>
+					        
+					        <p:outputLabel for="escolaridade_agressor" value="Escolaridade:"/>
+					        <p:selectOneRadio id="escolaridade_agressor" value="#{incidenteBean.agressor.escolaridade}">
+					            <f:selectItem itemLabel="1°" itemValue="primeiro"/>
+					            <f:selectItem itemLabel="2°" itemValue="segundo"/>
+					            <f:selectItem itemLabel="3°" itemValue="terceiro"/>
+					            <f:selectItem itemLabel="4°" itemValue="quarto"/>
+					            <f:selectItem itemLabel="5°" itemValue="quinto"/>
+					            <f:selectItem itemLabel="6°" itemValue="sexto"/>
+					            <f:selectItem itemLabel="7°" itemValue="setimo"/>
+					            <f:selectItem itemLabel="8°" itemValue="oitavo"/>
+					            <f:selectItem itemLabel="9°" itemValue="nono"/>
+					        </p:selectOneRadio>
 
-        <p:panel header="Cadastro de Denúncia">
-        <P>Incidente</P>
-			<p:panelGrid columns="6">	
+						</p:panelGrid>
+					</p:panel>
+	     		</p:panelGrid>
 
-	            
-				
-	            <p:outputLabel  value="Incidente" />          
-	            <p:inputTextarea id="incidente" value="#{denunciaBean.denuncia.incidente}" required="true" />
-	           
-	            <p:outputLabel  value="Violação de Direito" />
-	            <p:inputText id="violacaoDireito" value="#{denunciaBean.denuncia.violacaoDireito}" required="true" />
-	                
-	            <p:outputLabel value="Providências Tomadas" />
-	            <p:inputTextarea id="providencias" value="#{denunciaBean.denuncia.providencias}" required="true" />
-	            
-	            <p:commandButton value="Cadastrar" action="#{denunciaBean.salvar}" update= "formulario_denuncia"/>
-     		</p:panelGrid>
-		</p:panel>
-    </h:form>
+	     		<p:panel header="Sobre o ocorrido:">
+						
+				</p:panel>
+			</p:panel>
+	    </h:form>	
+	</center>
 </h:body>
 
 </html>
